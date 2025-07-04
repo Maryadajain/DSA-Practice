@@ -3,7 +3,7 @@
 #include<unordered_map>
 using namespace std;
 
-bool isAnagram(string s, string t) {
+bool isAnagram(string s, string t) { // for lower case char only
         if (s.size() != t.size()) return false;
 
         int count[26] = {0};
@@ -19,10 +19,27 @@ bool isAnagram(string s, string t) {
 
         return true;
     }
+
+bool isAnagram1(string s, string t) {  //for all char, upper, lower, unique
+             if (s.length() != t.length()) return false;
+
+        unordered_map<char, int> freq;
+
+        for (char c : s) freq[c]++;
+        for (char c : t) {
+            freq[c]--;
+            if (freq[c] < 0) return false;
+        }
+
+        return true;
+    }
+
+
+
 int main() {
     string s = "Maryada";   // First string
-    string t = "Maryaada";   // Second string
-    bool result = isAnagram(s, t);
+    string t = "Maryada";   // Second string
+    bool result = isAnagram1(s, t);
     if (result) {
         cout << "The strings are anagrams." << endl;
     } else {
