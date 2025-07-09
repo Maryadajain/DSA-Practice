@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-
+//TC=O(n log n), SC=O(n)
 void merge(vector<int> &arr, int st, int mid, int end){
     vector<int> temp;
     int i = st, j = mid + 1;
