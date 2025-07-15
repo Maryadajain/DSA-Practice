@@ -1,9 +1,9 @@
 #include<iostream>
 #include<vector>
 #include<math.h>
-
 using namespace std;
 
+//Must know basics
 
 string isPrime(int n){
     for(int i=2; i*i<n; i++){
